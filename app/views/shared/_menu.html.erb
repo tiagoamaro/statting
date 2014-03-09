@@ -1,0 +1,24 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Statting", root_url, :class => "navbar-brand" %>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <%= form_tag wallet_address_path, method: :get, class: 'navbar-form navbar-left' do %>
+        <%= content_tag :div, class: 'form-group' do %>
+          <%= text_field_tag :btc_address, @btc_address, class: 'form-control', placeholder: 'BTC Address' %>
+        <% end %>
+        <%= submit_tag 'Search', name: '', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

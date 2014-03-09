@@ -13,3 +13,9 @@
  */
 
 @import "bootstrap";
+@import "bootstrap/variables";
+
+#site-footer {
+  padding: 10px;
+  background-color: $gray-lighter;
+}

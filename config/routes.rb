@@ -1,4 +1,8 @@
 Statting::Application.routes.draw do
+  root 'wallet#index'
+
+  get '/wallet', to: 'wallet#address', as: 'wallet_address'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
