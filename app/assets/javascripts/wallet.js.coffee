@@ -45,10 +45,10 @@ $ ->
       title:
         text: "Monthly Performance"
       series: [{
-        name: "Hashrate (KH)"
+        name: "Hashrate (MH)"
         data: hashrate
       }, {
-        name: "Reject Rate (KH)"
+        name: "Reject Rate (MH)"
         data: rejectrate
       }
       ]
