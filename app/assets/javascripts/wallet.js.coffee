@@ -26,22 +26,7 @@ $ ->
           type: 'month'
           count: 1
           text: '1m'
-        }, {
-          type: 'month'
-          count: 3
-          text: '3m'
-        }, {
-          type: 'month'
-          count: 6
-          text: '6m'
-        }, {
-          type: 'year'
-          count: 1
-          text: '1y'
-        }, {
-          type: 'all'
-          text: 'All'
-        }]
+      }]
       title:
         text: "Monthly Performance"
       series: [{
@@ -70,22 +55,7 @@ $ ->
           type: 'month'
           count: 1
           text: '1m'
-        }, {
-          type: 'month'
-          count: 3
-          text: '3m'
-        }, {
-          type: 'month'
-          count: 6
-          text: '6m'
-        }, {
-          type: 'year'
-          count: 1
-          text: '1y'
-        }, {
-          type: 'all'
-          text: 'All'
-        }]
+      }]
       title:
         text: "BTC/1MH Performance"
       series: [{
