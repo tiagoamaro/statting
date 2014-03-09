@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require turbolinks
+
+//= require highstock-components/highstock
+
 //= require_tree .

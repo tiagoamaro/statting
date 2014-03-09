@@ -3,6 +3,8 @@ Statting::Application.routes.draw do
 
   get '/wallet', to: 'wallet#address', as: 'wallet_address'
 
+  get '/coinshift/month_performance', to: 'coinshift#month_performance'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
