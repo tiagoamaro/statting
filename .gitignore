@@ -17,3 +17,6 @@
 
 # Ignore OSX Files
 .DS_Store
+
+# Ignoring bower files
+/vendor/assets/components
