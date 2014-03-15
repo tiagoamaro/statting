@@ -1,3 +1,5 @@
+<%= render 'wallet/address_charts_data' %>
+
 <div class="panel panel-default">
   <div class="panel-body">
     <b>Address:</b> <%= @btc_address.address %>
@@ -8,7 +10,27 @@
 </div>
 
 <h2>Hashrate</h2>
+<div id="hashrate_chart"></div>
 
 <h2>Balance</h2>
+<div id="balance_chart"></div>
 
 <h2>Payouts</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Payout Time</th>
+      <th>Value</th>
+      <th>Tx ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @btc_address.payouts.each do |payout| %>
+      <tr>
+        <td><%= payout.timestamp %></td>
+        <td><%= payout.value %></td>
+        <td><%= payout.tx %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -28,7 +28,7 @@ $ ->
           text: '1m'
       }]
       title:
-        text: "Monthly Performance"
+        text: "Pool Hashrate"
       series: [{
         name: "Hashrate (MH)"
         data: hashrate

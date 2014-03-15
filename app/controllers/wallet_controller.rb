@@ -9,4 +9,12 @@ class WalletController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def address_data
+    btc_address = Address.find_by(address: params[:btc_address])
+
+    respond_to do |format|
+      format.json { render json: btc_address.to_stockchart }
+    end
+  end
 end
