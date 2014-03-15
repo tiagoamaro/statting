@@ -12,12 +12,17 @@
     </div>
 
     <div class="collapse navbar-collapse">
-      <%= form_tag wallet_address_path, method: :get, class: 'navbar-form navbar-left', style: 'display:none' do %>
+
+      <%= form_tag wallet_address_path, method: :get, class: 'navbar-form navbar-left' do %>
         <%= content_tag :div, class: 'form-group' do %>
-          <%= text_field_tag :btc_address, @btc_address, class: 'form-control', placeholder: 'BTC Address' %>
+          <%= text_field_tag :btc_address, @btc_address, class: 'form-control ', placeholder: 'BTC Address' %>
         <% end %>
         <%= submit_tag 'Search', name: '', class: 'btn btn-primary' %>
       <% end %>
+
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'FAQ', root_url %></li>
+      </ul>
     </div>
 
   </div>

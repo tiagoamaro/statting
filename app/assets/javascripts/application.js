@@ -15,5 +15,6 @@
 //= require bootstrap
 
 //= require highstock-components/highstock
+//= stub coinshift
 
 //= require_tree .

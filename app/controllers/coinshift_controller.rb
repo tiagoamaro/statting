@@ -4,6 +4,7 @@ class CoinshiftController < ApplicationController
 
   COINSHIFT_URL = 'http://coinshift.com'
   MONTH_PERFORMANCE_URL = "#{COINSHIFT_URL}/graph/api/v1/performance/30d"
+  ADDRESS_URL = 'http://coinshift.com/api/stats/address/:payout_address'
 
   def month_performance
     json = JSON.parse(open(MONTH_PERFORMANCE_URL).read)
