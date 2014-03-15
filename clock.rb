@@ -1,9 +1,9 @@
 require 'clockwork'
-require 'sidekiq'
+require './config/boot'
+require './config/environment'
 
 Dir["app/workers/*"].each {|f| load f }
 
 include Clockwork
 
-# every(10.minutes, 'update.addresses') { UpdateAddressWorker.perform_async }
-every(10.seconds, 'update.addresses') { UpdateAddressWorker.perform_async }
+every(5.minutes, 'update.addresses') { UpdateAddressesJob.call_workers }
