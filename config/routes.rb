@@ -2,6 +2,7 @@ Statting::Application.routes.draw do
   root 'wallet#index'
 
   get '/wallet', to: 'wallet#address', as: 'wallet_address'
+  get '/faq', to: 'wallet#faq'
 
   get '/coinshift/month_performance', to: 'coinshift#month_performance'
 
