@@ -20,3 +20,6 @@
 
 # Ignoring bower files
 /vendor/assets/components
+
+# Ignore database.yml file
+/config/database.yml
