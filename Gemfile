@@ -34,3 +34,6 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap-generators', '~> 3.1.1'
 
 gem 'bitcoin', '~> 0.2.0'
+gem 'sidekiq'
+gem 'clockwork'
+gem 'daemons'
