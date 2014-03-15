@@ -19,6 +19,7 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
     * `clockworkd -c clock.rb start`
+    * `rake jobs:work`
 
 * Deployment instructions
 
