@@ -1,7 +1,7 @@
 class UpdateAddressWorker
   include Sidekiq::Worker
 
-  # TODO: If we have my addresses, this will not work well
+  # TODO: If we have many addresses, this will not work well
   def perform
     Address.all.each do |btc_address|
       json = Coinshift.address_data(btc_address.address)
