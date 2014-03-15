@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.15)
+    bitcoin (0.2.0)
+      bitcoin-ruby
+    bitcoin-ruby (0.0.5)
     bootstrap-generators (3.1.1.1)
       railties (>= 3.1.0)
     bootstrap-sass (3.1.1.0)
@@ -131,6 +134,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitcoin (~> 0.2.0)
   bootstrap-generators (~> 3.1.1)
   bootstrap-sass (~> 3.1.1)
   capistrano
