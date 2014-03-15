@@ -19,6 +19,8 @@ class Coinshift
       address_url = ADDRESS_URL.gsub(':address', address)
       JSON.parse(open(address_url).read)
     end
+  rescue
+    {} # Address was not found, so we return an empty hash
   end
 
   private
