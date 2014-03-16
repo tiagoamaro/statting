@@ -1,6 +1,8 @@
+app_path = File.expand_path(File.dirname(__FILE__))
+
 require 'clockwork'
-require './config/boot'
-require './config/environment'
+require "#{app_path}/config/boot.rb"
+require "#{app_path}/config/environment.rb"
 
 Dir["app/workers/*"].each {|f| load f }
 
