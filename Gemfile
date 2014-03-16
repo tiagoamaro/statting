@@ -26,11 +26,11 @@ group :development do
   gem 'spring'
   gem 'pry'
 
-# Use Capistrano for deployment
-gem 'capistrano'
+  # Use Capistrano for deployment
+  gem 'capistrano'
 end
 
-gem 'unicorn'
+gem 'thin'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap-generators', '~> 3.1.1'
