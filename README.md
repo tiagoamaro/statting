@@ -18,7 +18,7 @@ Things you may want to cover:
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
-    * `clockworkd -c clock.rb start`
+    * `clockwork -c clock.rb start`
     * `rake jobs:work`
 
 * Deployment instructions

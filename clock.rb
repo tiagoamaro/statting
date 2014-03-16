@@ -9,3 +9,4 @@ Dir["app/workers/*"].each {|f| load f }
 include Clockwork
 
 every(5.minutes, 'update.addresses') { UpdateAddressesJob.call_workers }
+every(1.hours, 'update.payouts') { UpdatePayoutsJob.call_workers }
