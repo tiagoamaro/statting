@@ -25,7 +25,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @btc_address.payouts.each do |payout| %>
+    <% @btc_address.payouts.all(order: 'timestamp DESC').each do |payout| %>
       <tr>
         <td><%= payout.timestamp %></td>
         <td><%= payout.value %></td>
