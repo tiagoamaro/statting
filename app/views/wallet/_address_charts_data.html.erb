@@ -1,77 +1,83 @@
 <script type="text/javascript">
   $(function() {
-    $.getJSON("/address_data/<%= @btc_address.address %>.json", function(data) {
-      $("#hashrate_chart").highcharts("StockChart", {
-        chart: {
-          zoomType: 'xy'
-        },
-        rangeSelector: {
-          selected: 0,
-          buttons: [
+    var fiveMinutes = 1000*60*5;
+    var drawAddressCharts = function() {
+      $.getJSON("/address_data/<%= @btc_address.address %>.json", function(data) {
+        $("#hashrate_chart").highcharts("StockChart", {
+          chart: {
+            zoomType: 'xy'
+          },
+          rangeSelector: {
+            selected: 0,
+            buttons: [
+              {
+                type: 'week',
+                count: 1,
+                text: '1w'
+              }, {
+                type: 'week',
+                count: 2,
+                text: '2w'
+              }, {
+                type: 'month',
+                count: 1,
+                text: '1m'
+              }
+            ]
+          },
+          title: {
+            text: "Hash & Rejects"
+          },
+          series: [
             {
-              type: 'week',
-              count: 1,
-              text: '1w'
+              name: "Hashrate (MH)",
+              data: data.hashrates
             }, {
-              type: 'week',
-              count: 2,
-              text: '2w'
-            }, {
-              type: 'month',
-              count: 1,
-              text: '1m'
+              name: "Reject Rate (MH)",
+              data: data.rejectrates
             }
           ]
-        },
-        title: {
-          text: "Hash & Rejects"
-        },
-        series: [
-          {
-            name: "Hashrate (MH)",
-            data: data.hashrates
-          }, {
-            name: "Reject Rate (MH)",
-            data: data.rejectrates
-          }
-        ]
-      });
+        });
 
-      $("#balance_chart").highcharts("StockChart", {
-        chart: {
-          zoomType: 'xy'
-        },
-        rangeSelector: {
-          selected: 0,
-          buttons: [
+        $("#balance_chart").highcharts("StockChart", {
+          chart: {
+            zoomType: 'xy'
+          },
+          rangeSelector: {
+            selected: 0,
+            buttons: [
+              {
+                type: 'week',
+                count: 1,
+                text: '1w'
+              }, {
+                type: 'week',
+                count: 2,
+                text: '2w'
+              }, {
+                type: 'month',
+                count: 1,
+                text: '1m'
+              }
+            ]
+          },
+          title: {
+            text: "Balance"
+          },
+          series: [
             {
-              type: 'week',
-              count: 1,
-              text: '1w'
+              name: "Exchanged (BTC)",
+              data: data.exchanged
             }, {
-              type: 'week',
-              count: 2,
-              text: '2w'
-            }, {
-              type: 'month',
-              count: 1,
-              text: '1m'
+              name: "Unexchanged (BTC)",
+              data: data.unexchanged
             }
           ]
-        },
-        title: {
-          text: "Balance"
-        },
-        series: [
-          {
-            name: "Exchanged (BTC)",
-            data: data.exchanged
-          }, {
-            name: "Unexchanged (BTC)",
-            data: data.unexchanged
-          }
-        ]
+        });
       });
-    });
+    }
+
+    drawAddressCharts();
+    setInterval(drawAddressCharts, fiveMinutes);
   });
 </script>
