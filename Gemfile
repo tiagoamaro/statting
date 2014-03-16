@@ -30,6 +30,8 @@ group :development do
 gem 'capistrano'
 end
 
+gem 'unicorn'
+
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap-generators', '~> 3.1.1'
 
