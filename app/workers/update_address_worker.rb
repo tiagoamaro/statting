@@ -4,7 +4,9 @@ class UpdateAddressWorker
 
     json = Coinshift.address_data(btc_address.address)
     unless json.empty?
-      Balance.create(exchanged: json['exchanged_balance'], unexchanged: json['unexchanged_balance'], address: btc_address)
+      exchanged = json['exchanged_balance'] || 0
+      unexchanged = json['unexchanged_balance'] || 0
+      Balance.create(exchanged: exchanged, unexchanged: unexchanged, address: btc_address)
       HashRate.create(hash_rate: json['hashrate'], reject_rate: json['rejectrate'], address: btc_address)
     end
   end
