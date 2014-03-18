@@ -29,7 +29,9 @@
       <tr>
         <td><%= payout.timestamp %></td>
         <td><%= payout.value %></td>
-        <td><%= payout.tx %></td>
+        <td>
+          <%= link_to payout.tx, "https://blockchain.info/tx/#{payout.tx}", target: '_blank' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
