@@ -15,12 +15,12 @@
 
     <div class="collapse navbar-collapse">
 
-      <%= form_tag wallet_address_path, method: :get, class: 'navbar-form navbar-right' do %>
+      <form action="<%= wallet_address_path %>" method="GET" class="navbar-form navbar-right">
         <%= content_tag :div, class: 'form-group' do %>
           <%= text_field_tag :btc_address, @btc_address.try(:address), class: 'form-control ', placeholder: 'BTC Address' %>
         <% end %>
         <%= submit_tag 'Search', name: '', class: 'btn btn-primary' %>
-      <% end %>
+      </form>
 
       <ul class="nav navbar-nav">
         <li><%= link_to 'About', about_path %></li>
