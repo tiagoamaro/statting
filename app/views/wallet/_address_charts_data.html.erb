@@ -6,6 +6,10 @@
 
         // Last Updated
         $('#last-updated').text(data.last_updated);
+        $('#current-hash').text(data.last_hash);
+        $('#current-reject').text(data.last_reject);
+        $('#current-exchanged').text(data.last_exchanged);
+        $('#current-unexchanged').text(data.last_unexchanged);
 
         // Draw charts
         $("#hashrate_chart").highcharts("StockChart", {
@@ -35,10 +39,10 @@
           },
           series: [
             {
-              name: "Hashrate (MH)",
+              name: "Hashrate (KH)",
               data: data.hashrates
             }, {
-              name: "Rejected (MH)",
+              name: "Rejected (KH)",
               data: data.rejectrates
             }
           ]

@@ -12,6 +12,10 @@ class Address < ActiveRecord::Base
 
     Hash[
       'last_updated', DateTime.now.utc.to_s(:db),
+      'last_exchanged', balances.last.exchanged,
+      'last_unexchanged', balances.last.unexchanged,
+      'last_hash', hash_rates.last.hash_rate,
+      'last_reject', hash_rates.last.reject_rate,
       'exchanged', exchanged,
       'unexchanged', unexchanged,
       'hashrates', hashrates,
