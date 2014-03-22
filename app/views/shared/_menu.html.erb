@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
 
     <div class="navbar-header">
@@ -19,7 +19,7 @@
         <%= content_tag :div, class: 'form-group' do %>
           <%= text_field_tag :btc_address, @btc_address.try(:address), class: 'form-control ', placeholder: 'BTC Address' %>
         <% end %>
-        <%= submit_tag 'Search', name: '', class: 'btn btn-primary' %>
+        <%= submit_tag 'Search', name: '', class: 'btn btn-primary btn-sm' %>
       </form>
 
       <ul class="nav navbar-nav">
