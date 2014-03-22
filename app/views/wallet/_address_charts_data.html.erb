@@ -10,6 +10,7 @@
         $('#current-reject').text(data.last_reject);
         $('#current-exchanged').text(data.last_exchanged);
         $('#current-unexchanged').text(data.last_unexchanged);
+        $('#estimated-total').text(data.estimated_total);
 
         // Draw charts
         $("#hashrate_chart").highcharts("StockChart", {

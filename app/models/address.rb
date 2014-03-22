@@ -9,6 +9,7 @@ class Address < ActiveRecord::Base
     unexchanged = balances.map { |b| [b.created_at.to_i*1000, b.unexchanged] }
     hashrates = hash_rates.map { |h| [h.created_at.to_i*1000, h.hash_rate] }
     rejectrates = hash_rates.map { |h| [h.created_at.to_i*1000, h.reject_rate] }
+    estimated_total = balances.last.exchanged + balances.last.unexchanged
 
     Hash[
       'last_updated', DateTime.now.utc.to_s(:db),
@@ -16,6 +17,7 @@ class Address < ActiveRecord::Base
       'last_unexchanged', balances.last.unexchanged,
       'last_hash', hash_rates.last.hash_rate,
       'last_reject', hash_rates.last.reject_rate,
+      'estimated_total', estimated_total.round(8),
       'exchanged', exchanged,
       'unexchanged', unexchanged,
       'hashrates', hashrates,
