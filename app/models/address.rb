@@ -11,6 +11,7 @@ class Address < ActiveRecord::Base
     rejectrates = hash_rates.map { |h| [h.created_at.to_i*1000, h.reject_rate] }
 
     Hash[
+      'last_updated', DateTime.now.utc.to_s(:db),
       'exchanged', exchanged,
       'unexchanged', unexchanged,
       'hashrates', hashrates,

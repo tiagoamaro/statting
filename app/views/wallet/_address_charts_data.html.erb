@@ -3,6 +3,11 @@
     var fiveMinutes = 1000*60*5;
     var drawAddressCharts = function() {
       $.getJSON("/address_data/<%= @btc_address.address %>.json", function(data) {
+
+        // Last Updated
+        $('#last-updated').text(data.last_updated);
+
+        // Draw charts
         $("#hashrate_chart").highcharts("StockChart", {
           chart: {
             zoomType: 'xy'

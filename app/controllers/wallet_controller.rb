@@ -11,7 +11,7 @@ class WalletController < ApplicationController
   end
 
   def address_data
-    btc_address = Address.find_by(address: params[:btc_address])
+    btc_address = Address.find_by address: params[:btc_address]
 
     respond_to do |format|
       format.json { render json: btc_address.to_stockchart }
