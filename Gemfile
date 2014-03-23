@@ -31,6 +31,7 @@ group :development do
 end
 
 gem 'thin'
+gem 'god'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap-generators', '~> 3.1.1'
