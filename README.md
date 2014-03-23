@@ -1,4 +1,4 @@
-# Statting
+# [Statting](http://statting.info)
 
 detailed statistics of the CoinShift Pool
 
