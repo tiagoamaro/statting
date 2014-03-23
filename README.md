@@ -23,8 +23,7 @@ detailed statistics of the CoinShift Pool
     * `rake jobs:work`
 
 * Deployment instructions
-    * Remember to create a `config/initializer/secret_token.rb`, otherwise Rails will not initialize.
-        * Example: `Statting::Application.config.secret_key_base = 'myscretoken'`
+    * Remember to change your secret token (don't make it public). Change it in the `config/initializer/secret_token.rb` file
 
     * Useful scripts:
         * Start Rails:
