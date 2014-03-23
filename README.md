@@ -1,6 +1,6 @@
 # Statting
 
-Things you may want to cover:
+detailed statistics of the CoinShift Pool 
 
 * Ruby version
     * 2.1.1
@@ -9,6 +9,7 @@ Things you may want to cover:
     * Bower
 
 * Configuration
+    * To install highstocks.js, run `bower install`
 
 * Database creation
     * `rake db:create`
