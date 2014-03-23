@@ -1,0 +1,1 @@
+Statting::Application.config.secret_key_base = 'mysecrettoken'
