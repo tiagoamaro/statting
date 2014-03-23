@@ -1,6 +1,6 @@
 # Statting
 
-detailed statistics of the CoinShift Pool 
+detailed statistics of the CoinShift Pool
 
 * Ruby version
     * 2.1.1
@@ -23,5 +23,5 @@ detailed statistics of the CoinShift Pool
     * `rake jobs:work`
 
 * Deployment instructions
-
-* ...
+    * Remember to create a `config/initializer/secret_token.rb`, otherwise Rails will not initialize.
+        * Example: `Statting::Application.config.secret_key_base = 'myscretoken'`
