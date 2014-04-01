@@ -13,8 +13,12 @@ class WalletController < ApplicationController
   def address_data
     btc_address = Address.find_by address: params[:btc_address]
 
+    json = Rails.cache.fetch(['address_data', btc_address.address], expires_in: 5.minutes) do
+      btc_address.to_stockchart
+    end
+
     respond_to do |format|
-      format.json { render json: btc_address.to_stockchart }
+      format.json { render json: json }
     end
   end
 end
