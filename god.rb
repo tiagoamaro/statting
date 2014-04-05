@@ -22,3 +22,13 @@ God.watch do |w|
   w.behavior(:clean_pid_file)
   w.keepalive
 end
+
+God.watch do |w|
+  w.name = "clockwork"
+  w.start = "cd #{RAILS_ROOT};  RAILS_ENV=#{RAILS_ENV} clockworkd start --log"
+  w.stop = "cd #{RAILS_ROOT}; RAILS_ENV=#{RAILS_ENV} clockworkd stop"
+  w.pid_file = "#{RAILS_ROOT}/tmp/clockworkd.clock.pid"
+
+  w.behavior(:clean_pid_file)
+  w.keepalive
+end
