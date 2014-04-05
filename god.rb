@@ -14,8 +14,8 @@ end
 
 God.watch do |w|
   w.name = "delayed_job"
-  w.start = "cd #{RAILS_ROOT}/current;  RAILS_ENV=#{RAILS_ENV} bin/delayed_job start"
-  w.stop = "cd #{RAILS_ROOT}/current; RAILS_ENV=#{RAILS_ENV} bin/delayed_job stop"
+  w.start = "cd #{RAILS_ROOT};  RAILS_ENV=#{RAILS_ENV} bin/delayed_job start"
+  w.stop = "cd #{RAILS_ROOT}; RAILS_ENV=#{RAILS_ENV} bin/delayed_job stop"
   w.log = "#{RAILS_ROOT}/log/god_delayed_job.log"
   w.pid_file = "#{RAILS_ROOT}/tmp/pids/delayed_job.pid"
 
